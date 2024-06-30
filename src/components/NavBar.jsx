@@ -1,13 +1,17 @@
 import PropTypes from "prop-types";
 
 function NavBar({setPokemonIndex, pokemonList }) {
+
   return (
     <div>
       {pokemonList.map((pokemon, index) => (
         <button
           type="button"
           key={pokemon.name}
-          onClick={() => setPokemonIndex(index)}
+          onClick={() => { if (pokemon.name === "Pikachu") {
+            alert("Pika Pikachu !!!");
+          }
+            setPokemonIndex(index)}}
         >
           {pokemon.name}
         </button>
